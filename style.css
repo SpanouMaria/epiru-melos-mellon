@@ -67,3 +67,23 @@
 .close:hover {
     color: red;
 }
+
+.sound-page-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); 
+}
+
+.drop-btn {
+    font-size: 100px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.drop-btn:hover {
+    transform: scale(1.2); 
+}
