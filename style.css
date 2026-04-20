@@ -27,3 +27,14 @@
   flex-direction: column;
   gap: 10px;
 }
+
+.close {
+    cursor: pointer;
+    font-size: 20px;
+    align-self: flex-end;
+    color: #333;
+}
+
+.close:hover {
+    color: red;
+}
