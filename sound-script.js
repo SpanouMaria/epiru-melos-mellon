@@ -1,22 +1,30 @@
-let currentAudio = null; 
-let pool = ['audio1.mp3', 'audio2.mp3', 'audio3.mp3', 'audio4.mp3'];
-let queue = [];
+const sounds = ['audio1.mp3', 'audio2.mp3', 'audio3.mp3', 'audio4.mp3'];
 
-function toggleSound() {
-    if (currentAudio && !currentAudio.paused) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
-        return; 
+function getNextSound() {
+    let pool = JSON.parse(sessionStorage.getItem('soundPool'));
+
+    if (!pool || pool.length === 0) {
+        pool = [...sounds].sort(() => Math.random() - 0.5);
     }
-    
-    if (queue.length === 0) queue = [...pool].sort(() => Math.random() - 0.5);
-    const soundFile = queue.pop();
-    
-    currentAudio = new Audio(soundFile);
-    currentAudio.loop = true; 
-    currentAudio.preload = "auto"; 
-    
-    currentAudio.play();
+
+    const selectedSound = pool.pop();
+    sessionStorage.setItem('soundPool', JSON.stringify(pool));
+    return selectedSound;
 }
 
-document.getElementById('soundButton').addEventListener('click', toggleSound);
+const dropBtn = document.getElementById('soundButton');
+let currentAudio = null;
+
+const lockedSound = getNextSound();
+currentAudio = new Audio(lockedSound);
+currentAudio.loop = true;
+
+dropBtn.addEventListener('click', () => {
+    if (currentAudio.paused) {
+        currentAudio.play();
+        dropBtn.textContent = "🔊"; 
+    } else {
+        currentAudio.pause();
+        dropBtn.textContent = "💧"; 
+    }
+});
