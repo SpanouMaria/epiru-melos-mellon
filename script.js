@@ -3,11 +3,11 @@ const modal = document.getElementById('audioModal');
 const closeBtn = document.querySelector('.close');
 
 btn.addEventListener('click', () => {
-    modal.style.display = 'flex'; 
+    modal.classList.add('active');
 });
 
 closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
+    modal.classList.remove('active');
 });
 
 window.addEventListener('click', (event) => {
