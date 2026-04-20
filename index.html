@@ -1,15 +1,31 @@
-<button id="audioBtn" class="audio-btn">Ήχοι</button>
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Το site μου</title>
+</head>
+<body>
 
-<div id="audioModal" class="modal">
-  <div class="modal-content">
-    <button>Ήχος 1</button>
-    <button>Ήχος 2</button>
-    <button>Ήχος 3</button>
-    <button>Ήχος 4</button>
-  </div>
-</div>
+    <header>
+        <button id="audioBtn" class="audio-btn">Ήχοι</button>
+    </header>
 
-<div class="gallery">
-  <img src="photo1.jpg" alt="Photo">
-  <img src="photo2.jpg" alt="Photo">
-</div>
+    <main class="gallery">
+        <img src="photo1.jpg" alt="Περιγραφή φωτογραφίας 1">
+        <img src="photo2.jpg" alt="Περιγραφή φωτογραφίας 2">
+    </main>
+
+    <div id="audioModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span> <h3>Επίλεξε Ήχο</h3>
+            <button class="sound-item">Ήχος 1</button>
+            <button class="sound-item">Ήχος 2</button>
+            <button class="sound-item">Ήχος 3</button>
+            <button class="sound-item">Ήχος 4</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
