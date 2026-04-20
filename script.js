@@ -3,7 +3,7 @@ const modal = document.getElementById('audioModal');
 const closeBtn = document.querySelector('.close');
 
 btn.addEventListener('click', () => {
-    modal.style.display = (modal.style.display === 'block') ? 'none' : 'block';
+    modal.style.display = 'flex'; 
 });
 
 closeBtn.addEventListener('click', () => {
